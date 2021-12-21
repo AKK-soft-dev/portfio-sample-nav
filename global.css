@@ -1,0 +1,137 @@
+html{
+  font-size: 16px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body, .navbar{
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  justify-content: flex-start;
+  box-shadow: 0 1px 10px #464861;
+  z-index: 2;
+}
+
+.brand{
+  flex: 1 1 auto;
+  color: #6673FD;
+  font-size: 1rem;
+}
+
+img.brand{
+  width: 1rem;
+  max-width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: solid 2px rgba(0, 134, 0, 0.7);
+}
+
+.nav{
+  flex: 1 1 auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav > li{
+  margin-right: 1rem;
+}
+
+.nav-link{
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(0, 134, 0, 1);
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.navigator{
+  display: none;
+  padding: 0.3rem;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.navigator > li{
+  display: block;
+  width: 1.5rem;
+  height: 0.25rem;
+  background: rgba(0, 134, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.navigator > li:nth-child(2){
+  width: 1rem;
+}
+
+.navigator > li:nth-child(3){
+  width: 0.5rem;
+}
+
+  .navigator > li:not(:last-child
+){
+  margin-bottom: 0.2rem;
+}
+
+label[for='nav-helper']{
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#nav-helper:checked ~ label .navigator > li:first-child{
+  
+  width: 0.5rem;
+}
+
+#nav-helper:checked ~ label .navigator > li:last-child{
+  width: 1.5rem;
+}
+
+@media (max-width: 768px){
+  
+  .nav{
+    position: absolute;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    top: calc(100% - 0.8rem);
+    left: -100%;
+    background: rgba(0, 134, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+  }
+  
+  #nav-helper:checked ~ .nav{
+    left: 0;
+  }
+  
+  .nav > li{
+    display: block;
+    width: 100%;
+  }
+  
+  .nav-link{
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  
+  .brand{
+    margin-left: auto;
+  }
+  
+  .navigator{
+    display: inline-block;
+  }
+}
